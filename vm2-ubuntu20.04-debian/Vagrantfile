@@ -7,6 +7,10 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
   config.vm.hostname = "ubuntu"
+  #config.vm.network "public_network", ip: "192.168.50.4", bridge: "br-55657f244628"
+  config.vm.network "forwarded_port", guest: 80, host: 8080, protocol: "tcp"
+    auto_correct: true
+  config.vm.usable_port_range = 8000..8999
 
   # Provider for Docker
   config.vm.provider :docker do |docker, override|
