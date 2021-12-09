@@ -5,3 +5,6 @@ Most advanced VM is in - [./vm2-ubuntu20.04-debian](vm2-ubuntu20.04-debian)
 
 ## Why Vagrant with Docker?
 VirtualBox not working on Apple M1 because VirtualBox requires an Intel processors.
+
+## In Linux 
+docker run --tmpfs /tmp --tmpfs /run -it -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 8081:80 -p 8080:8080 --name my_image <my_image>
