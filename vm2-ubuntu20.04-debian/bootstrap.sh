@@ -11,6 +11,6 @@ echo "Set root password"
 echo -e "admin\nadmin" | passwd root >/dev/null 2>&1
 
 # Install docker 
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
-systemctl start docker
+# curl -fsSL https://get.docker.com -o get-docker.sh
+# sh get-docker.sh
+# systemctl start docker
