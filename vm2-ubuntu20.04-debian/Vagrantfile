@@ -7,13 +7,9 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
 Vagrant.configure("2") do |config|
   config.vm.box = "rofrano/vagrant-provider:ubuntu-jammy"
   config.vm.hostname = "ubuntu"
-  #config.vm.network "public_network", ip: "192.168.50.4", bridge: "br-55657f244628"
-  # config.vm.network "forwarded_port", guest: 80, host: 8080, protocol: "tcp"
-  # config.vm.network "forwarded_port", guest: 90, host: 9090, protocol: "tcp"
   for i in 8000..8100
     config.vm.network :forwarded_port, guest: i, host: i
   end
-  #config.vm.network :public_network, type: "dhcp", bridge: ["eth0", "en0"]
   
   # Provider for Docker
   config.vm.provider :docker do |docker, override|
