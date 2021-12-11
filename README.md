@@ -1,7 +1,7 @@
 ## Vagrant Docker Provider for Apple M1
 Vagrant Files and Scripts to run VM boxes in Docker with help of the Vagrant on top of MacOS M1 (Apple Silicon)
 
-Most advanced VM is in - [./vm2-ubuntu20.04-debian](vm2-ubuntu20.04-debian)
+Most advanced VM is in - [./vm2-ubuntu22.04-debian](vm2-ubuntu20.04-debian)
 
 ## Why Vagrant with Docker?
 VirtualBox not working on Apple M1 because VirtualBox requires an Intel processors.
@@ -9,20 +9,20 @@ VirtualBox not working on Apple M1 because VirtualBox requires an Intel processo
 ## How to use
 Build docker: 
 ```bash
-cd ./vm2-ubuntu20.04-debian
+cd ./vm2-ubuntu22.04-debian
 make help
 make build
 ````
 
-or 
+or
 ```bash
-cd ./vm2-ubuntu20.04-debian
+cd ./vm2-ubuntu22.04-debian
 docker build --file Dockerfile.ubuntu --tag rofrano/vagrant-provider:ubuntu-jammy .
 ```
 
 run Vagrant
 ```bash
-cd ./vm2-ubuntu20.04-debian
+cd ./vm2-ubuntu22.04-debian
 vagrant up
 ```
 
