@@ -11,6 +11,14 @@ echo "Set root password"
 echo -e "admin\nadmin" | passwd root >/dev/null 2>&1
 
 # Install docker 
+# This method doesn't work in Ubuntu 22:04
 # curl -fsSL https://get.docker.com -o get-docker.sh
 # sh get-docker.sh
 # systemctl start docker
+
+# Install docker
+apt update --yes && \
+apt install docker.io --yes && \ 
+systemctl start docker.service && \ 
+systemctl enable docker.service && \ 
+systemctl status docker.service

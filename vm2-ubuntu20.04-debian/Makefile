@@ -7,7 +7,7 @@
 # These can be overidden with env vars.
 REGISTRY ?= rofrano
 IMAGE_NAME ?= vagrant-provider
-IMAGE_TAG ?= ubuntu
+IMAGE_TAG ?= ubuntu-jammy
 IMAGE ?= $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG)
 PLATFORM ?= "linux/amd64,linux/arm64"
 
