@@ -5,9 +5,9 @@
 ## ----------------------------------------------------------------------
 
 # These can be overidden with env vars.
-REGISTRY ?= rofrano
+REGISTRY ?= mothes
 IMAGE_NAME ?= vagrant-provider
-IMAGE_TAG ?= ubuntu
+IMAGE_TAG ?= ubuntu-jammy
 IMAGE ?= $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG)
 PLATFORM ?= "linux/amd64,linux/arm64"
 
@@ -38,7 +38,7 @@ init:	## Creates the buildx instance
 .PHONY: build
 build:	## Build all of the project Docker images
 	$(info Building $(IMAGE) for $(PLATFORM)...)
-	docker buildx build --file Dockerfile.$(IMAGE_TAG) --pull --platform=$(PLATFORM) --tag $(IMAGE) .
+	docker buildx build --pull --file Dockerfile.$(IMAGE_TAG) --platform=$(PLATFORM) --push --tag $(IMAGE) .
 
 .PHONY: run
 run:	## Run a vagrant VM using this image
