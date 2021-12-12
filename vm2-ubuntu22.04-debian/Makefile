@@ -38,6 +38,7 @@ init:	## Creates the buildx instance
 .PHONY: build
 build:	## Build all of the project Docker images
 	$(info Building $(IMAGE) for $(PLATFORM)...)
+	# I use --push flag, cuz --load works only with single architecture
 	docker buildx build --pull --file Dockerfile.$(IMAGE_TAG) --platform=$(PLATFORM) --push --tag $(IMAGE) .
 
 .PHONY: run
